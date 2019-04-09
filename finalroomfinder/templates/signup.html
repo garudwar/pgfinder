@@ -1,0 +1,28 @@
+{%  extends  "base.html" %}
+
+{% block  content %}
+
+{% if  request.session.message %}
+<h2> {{request.session.message}}</h2>
+{% endif %}
+
+<table >
+
+<form method="POST" action="http://localhost:8000/signup/"  enctype="multipart/form-data">{% csrf_token %}
+
+ <tr> <td>username</td><td> {{ f.username }}</td></tr>
+ <tr><td></td></tr>
+<tr><td>  password</td><td> {{ f.password }}<td> </tr>
+<tr>  <td>email </td><td>{{  f.email }}<td></tr>
+ <tr><td> image</td><td> {{ f.image }}<td></tr>
+ 
+
+<tr><td><input  type="submit"  value="register"></td></tr>
+
+</form> 
+ 
+ 
+
+</table>
+
+{% endblock %}
