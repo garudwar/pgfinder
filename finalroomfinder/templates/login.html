@@ -1,0 +1,78 @@
+{%  extends  "base.html" %}
+{% load widget_tweaks %}
+
+{% block  content %}
+
+{% if request.session.yes %}
+
+    <center>
+    <div class="card" style="width:560px;">
+
+  <div class="card-body">
+
+<p><h1><font color="#7cfc00" >SuccessFully Logged In</font><h1> </p>
+      <p><h2> Enjoy The Website </h2></p>
+      <br><br><br>
+      <p><a href="http://localhost:8000/"> <strong><font size="4" color="#7cfc00" >click  to  return to  homepage</font></strong> </a></p>
+
+  </div>
+    </div>
+    </center>
+{% else %}
+
+    <center>
+    <div class="card" style="width:560px;">
+
+  <div class="card-body">
+
+<form method="POST" action="http://localhost:8000/login/">{% csrf_token %}
+
+
+
+
+<div class="container" style="width:500px;">
+  <h2>Login to Website</h2>
+<br><br>
+    <div class="form-group">
+      <label for="username">username</label>
+{{f.username|add_class:"form-control"}}
+    </div>
+    <div class="form-group">
+      <label for="pwd">Password:</label>
+      {{f.password|add_class:"form-control"}}
+    </div>
+    <div class="checkbox">
+      <label><input type="checkbox" name="remember"> Remember me</label>
+    </div>
+<br><br>
+
+
+    <button type="submit" class="btn btn-info btn-md" style="width:100%; align:center;">login</button>
+
+
+</form>
+
+    <br><br><br>
+
+
+    <form action="http://localhost:8000/signup/" method="POST">{%  csrf_token %}
+<button type="submit" class="btn btn-info btn-md" style="width:100%; align:center;">Create Account</button>
+  </form>
+
+
+
+</div>
+
+
+
+</center>
+ </div>
+</div>
+
+
+{% endif %}
+
+
+
+
+{% endblock %}
