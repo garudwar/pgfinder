@@ -1,6 +1,6 @@
 from django.shortcuts import render,redirect
 from . models import ItemModel,RegisterModel
-from .forms import LoginForm,RegisterForm
+from .forms import LoginForm,RegisterForm,AddForm
 import  json
 
 # Create your views here.
@@ -64,5 +64,31 @@ def logout(request):
     del request.session["yes"]
     return redirect("http://localhost:8000/login")
 
+
+
+def addpage(request):
+
+    t=request.POST.get("title")
+    d=request.POST.get("description")
+    i=request.FILES.get("image")
+    p=request.POST.get("price")
+    b=request.POST.get("buildingtype")
+    c=request.POST.get("contact")
+    e=request.POST.get("email")
+    l=request.POST.get("location")
+    po=request.POST.get("postedon")
+    ps=request.POST.get("postedby")
+    
+
+    request.session["message"]="Welcome to Add PG Page"
+    if  t is  not None and d is not None and i is not None and p is not None and b is not None and c is not None and e is not None and l is not None and po is not None and ps is not None:
+        
+        obj=ItemModel(title=t,description=d,image1=i,price=p,buildingtype=b,contact=c,email=e,location=l,postedon=po,postedby=ps)
+        obj.save()
+        request.session["message"]=" Successfully Added"
+        
+
+    f=AddForm()
+    return render(request,"add.html",{'f':f})
 
 
