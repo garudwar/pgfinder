@@ -14,20 +14,19 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.conf.urls import url
 from  website.views import homepage,login,pgdetail,signup,logout
 from django.conf import settings
 from django.conf.urls.static import static
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('',homepage),
-     path("login/",login),
-    path('pgdetails/',pgdetail),
-    path('signup/',signup),
-    path('logout/',logout),
+    url('admin/', admin.site.urls),
+    url('home/',homepage),
+    url("login/",login),
+    url('pgdetails/',pgdetail),
+    url('signup/',signup),
+    url('logout/',logout),
 
+]
 
-
-
-]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
-
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
