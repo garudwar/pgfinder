@@ -21,6 +21,7 @@ class ItemModel(models.Model):
     id=AutoField(primary_key=True)
     title = models.CharField(max_length=100)
     description = models.CharField(max_length=10000)
+    image = models.ImageField(upload_to="media/")
     image1 = models.ImageField(upload_to="media/")
     image2 = models.ImageField(upload_to="media/")
     image3 = models.ImageField(upload_to="media/")

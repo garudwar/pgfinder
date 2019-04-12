@@ -4,7 +4,7 @@
 {%  block content %}
 
 <center>
-<form class="form-inline" action="http://localhost:8000/">
+<form class="form-inline" action="http://localhost:8000/home/">
     <input class="form-control mr-sm-2" type="text" placeholder="Search" name="q" style="margin-left:300px;width:300px;">
     <button class="btn btn-success bg-info" type="submit">Search</button>
   </form>
@@ -16,7 +16,7 @@
      <div class="card">
     <div class="card-body">
         <table>
-            <tr> <td><img src="media/{{ i.image1 }}" width="100" height="100"> <strong>&nbsp;&nbsp;&nbsp;&nbsp;<a style="text-decoration: none;" href="http://localhost:8000/pgdetails?id={{i.id}}">{{i.title}}</a> </strong>&nbsp;&nbsp;Price :<b><font color="red">{{ i.price }}</font> </b></td></tr>
+            <tr> <td><img src="../media/{{ i.image1 }}" width="100" height="100"> <strong>&nbsp;&nbsp;&nbsp;&nbsp;<a style="text-decoration: none;" href="http://localhost:8000/pgdetails?id={{i.id}}">{{i.title}}</a> </strong>&nbsp;&nbsp;Price :<b><font color="red">{{ i.price }}</font> </b></td></tr>
 
 
 <tr><td><p></b>{{i.description}}</p></td></tr>

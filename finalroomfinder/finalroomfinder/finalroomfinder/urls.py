@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.conf.urls import url
-from  website.views import homepage,login,pgdetail,signup,logout
+from  website.views import homepage,login,pgdetail,signup,logout,addpage,intro1,intro2
 from django.conf import settings
 from django.conf.urls.static import static
 urlpatterns = [
@@ -25,6 +25,9 @@ urlpatterns = [
     url('pgdetails/',pgdetail),
     url('signup/',signup),
     url('logout/',logout),
+    url('add/',addpage),
+    url('intro1/',intro1),
+    url('intro2/',intro2)
 
 ]
 

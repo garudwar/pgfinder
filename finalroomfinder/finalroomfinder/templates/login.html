@@ -34,7 +34,7 @@
   <h2>Login to Website</h2>
 <br><br>
     <div class="form-group">
-      <label for="username">username</label>
+      <label for="username">Username</label>
 {{f.username|add_class:"form-control"}}
     </div>
     <div class="form-group">
@@ -44,6 +44,7 @@
     <div class="checkbox">
       <label><input type="checkbox" name="remember"> Remember me</label>
     </div>
+	<h6><p align="center">Forget Password?</p></h6>
 <br><br>
 
 
@@ -55,7 +56,7 @@
     <br><br><br>
 
 
-    <form action="http://localhost:8000/signup/" method="POST">{%  csrf_token %}
+    <form action="http://localhost:8000/intro1/" method="POST">{%  csrf_token %}
 <button type="submit" class="btn btn-info btn-md" style="width:100%; align:center;">Create Account</button>
   </form>
 

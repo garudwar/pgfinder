@@ -1,20 +1,26 @@
 {%  extends  "base.html" %}
 
-{% block  content %}
+{% block  content %}\
+
+  <center>
+    <div class="card" style="width:560px;">
+
+  <div class="card-body">
 
 {% if  request.session.message %}
 <h2> {{request.session.message}}</h2>
 {% endif %}
 
-<table >
+
+<table  cellspacing="50" cellpadding="10">
 
 <form method="POST" action="http://localhost:8000/signup/"  enctype="multipart/form-data">{% csrf_token %}
 
- <tr> <td>username</td><td> {{ f.username }}</td></tr>
- <tr><td></td></tr>
-<tr><td>  password</td><td> {{ f.password }}<td> </tr>
-<tr>  <td>email </td><td>{{  f.email }}<td></tr>
- <tr><td> image</td><td> {{ f.image }}<td></tr>
+ <tr> <td>Username</td><td> {{ f.username }}</td></tr>
+
+<tr><td>  Password</td><td> {{ f.password }}<td> </tr>
+<tr>  <td>Email </td><td>{{  f.email }}<td></tr>
+ <tr><td> Image</td><td> {{ f.image }}<td></tr>
  
 
 <tr><td><input  type="submit"  value="register"></td></tr>

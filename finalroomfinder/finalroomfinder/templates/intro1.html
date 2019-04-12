@@ -1,0 +1,31 @@
+
+{%  extends  "base.html" %}
+{% load widget_tweaks %}
+
+{% block  content %}
+
+  <center>
+    <div class="card" style="width:560px;">
+
+  <div class="card-body">
+
+<h2> Otp  Verification Required</h2>
+<br><br>
+<h4><font color="green"> please enter  phone  number to recieve otp</font> </h4>
+<br><br><br>
+
+<form action="http://localhost:8000/intro2/" method="POST">{% csrf_token %}
+
+<input  type="text" name="number" placholder="enter  phone number">
+<input  type="hidden"  name="otpvalue" value="{{otpvalue}}">
+
+
+<input type="submit" value="send OTP">
+
+
+
+</form>
+</div>
+</div>
+
+{% endblock %}
