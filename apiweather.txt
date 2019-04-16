@@ -1,0 +1,1 @@
+http://api.openweathermap.org/data/2.5/forecast/daily?q=chandigarh&units=metric&cnt=16&APPID=910202e926b5e44f37d38d88d16b5dbe
